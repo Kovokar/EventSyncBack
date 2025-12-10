@@ -1,0 +1,10 @@
+# Ignorar build cache e arquivos desnecessários
+
+.git
+.gitignore
+docs/
+rand/
+deployments/
+**/*.md
+**/*.log
+**/*.tmp
