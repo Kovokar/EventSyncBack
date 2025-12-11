@@ -19,3 +19,5 @@ type BaseModel struct {
 	UpdatedBy *uint          `json:"updated_by,omitempty"`
 	DeletedBy *uint          `json:"deleted_by,omitempty"`
 }
+
+func (BaseModel) TableName() string { return "base_model" }
