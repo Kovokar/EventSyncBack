@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"socialVoleiAPI/internal/database/migrations"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -34,7 +35,9 @@ func StartDb() {
 	config.SetMaxOpenConns(100)
 	config.SetMaxIdleConns(10)
 
-	// migrations.RunMigrations(db)
+	if os.Getenv("MAKE_MIGRATIONS") == "true" {
+		migrations.RunMigrations(db)
+	}
 	log.Println("✅ Banco de dados conectado com sucesso.")
 }
 
