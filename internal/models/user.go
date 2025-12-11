@@ -26,10 +26,10 @@ type User struct {
 	// Relationships
 	OrganizedEvents        []Event            `gorm:"foreignKey:OrganizerID"`
 	Registrations          []Registration     `gorm:"foreignKey:UserID"`
-	SentFriendRequests     []Friendship       `gorm:"foreignKey:RequestingUserID"`
-	ReceivedFriendRequests []Friendship       `gorm:"foreignKey:TargetUserID"`
+	SentFriendRequests     []Friendship       `gorm:"foreignKey:RequesterUserID"`
+	ReceivedFriendRequests []Friendship       `gorm:"foreignKey:RecipientUserID"`
 	SentMessages           []Message          `gorm:"foreignKey:SenderID"`
-	ReceivedMessages       []Message          `gorm:"foreignKey:RecipientID"`
+	ReceivedMessages       []Message          `gorm:"foreignKey:ReceiverID"`
 	Reviews                []Review           `gorm:"foreignKey:UserID"`
 	Notifications          []UserNotification `gorm:"foreignKey:UserID"`
 }

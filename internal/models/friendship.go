@@ -18,4 +18,4 @@ type Friendship struct {
 	SourceEvent   Event `gorm:"foreignKey:SourceEventID"`
 }
 
-func (Friendship) TableName() string { return "Friendships" }
+func (Friendship) TableName() string { return "friendships" }
