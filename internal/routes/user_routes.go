@@ -23,6 +23,8 @@ func UserRoutes(router *gin.RouterGroup) {
 		user.GET("/", userController.GetUsers)
 		user.GET("/:id", userController.GetUserByID)
 		user.POST("/", userController.CreateUser)
-
+		user.PATCH("/:id", userController.UpdateUser)
+		user.PUT("/:id", userController.PutUser)
+		user.DELETE("/:id", userController.DeleteUser)
 	}
 }
